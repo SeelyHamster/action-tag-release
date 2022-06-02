@@ -1,0 +1,22 @@
+name: 'Action Tag Release'
+description: 'Automatically create tag and release in push event'
+inputs:
+  target_branch:
+    description: 'Target branch'
+    default: 'master'
+    required: false
+  prefix:
+    description: 'Tag and release prefix'
+    required: false
+  github_token:
+    description: 'Github secret token for private repository access'
+    required: true
+outputs:
+  automatic_tag:
+    description: 'The release & tag created by this action'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+branding:
+  icon: "git-merge"
+  color: "blue"
